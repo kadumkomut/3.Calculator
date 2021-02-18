@@ -1,0 +1,190 @@
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+* {
+  padding: 0;
+}
+
+.Main {
+  width: 100vw;
+  height: 100vh;
+  background-color: #a8322a;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.Main .particle {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+}
+
+.Main .board {
+  width: 600px;
+  z-index: 3;
+}
+
+.Main .board .inputbox {
+  overflow: hidden;
+  max-width: 800px;
+}
+
+.Main .board .inputbox div {
+  width: 100%;
+  background-color: black;
+  border: 0;
+  padding: 6px 4px;
+  height: 100px;
+  color: white;
+  font-size: 3rem;
+  position: relative;
+  position: relative;
+}
+
+.Main .board .inputbox div .result {
+  right: 0;
+  position: absolute;
+  line-height: 120px;
+  padding-right: 17px;
+}
+
+.Main .board .inputbox div .error {
+  position: absolute;
+  right: 20px;
+  font-weight: bold;
+  text-align: right;
+  font-size: 1rem;
+  background-color: black;
+  color: #f33131;
+}
+
+.Main .board .button {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.Main .board .button button {
+  padding: 25px;
+  outline: none;
+  font-size: 2rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.Main .board .button button:after {
+  content: "";
+  background: white;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -30px !important;
+  margin-top: -120%;
+  opacity: 0;
+  -webkit-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+
+.Main .board .button button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.Main .board .button .clear {
+  background-color: #27ae60;
+  color: white;
+  border: 0;
+  border-bottom: 1px solid #18703d;
+  border-right: 1px solid #18703d;
+}
+
+.Main .board .button .clear:hover {
+  background-color: #1a703e;
+}
+
+.Main .board .button .number {
+  background-color: #34495e;
+  color: white;
+  border: 0.4px solid #1b242e;
+}
+
+.Main .board .button .number:hover {
+  background-color: #293747;
+}
+
+.Main .board .button .operator {
+  background-color: #bdc3c7;
+  color: #2c3e50;
+  border: 1px solid #7f8c8d;
+  font-weight: bold;
+}
+
+.Main .board .button .operator:hover {
+  background-color: #93a2a3;
+  color: white;
+}
+
+.Main .board .button .extra {
+  background-color: #7f8c8d;
+  color: white;
+  border: 1px solid #5f6969;
+}
+
+.Main .board .button .extra:hover {
+  background-color: #677272;
+}
+
+.Main .board .button .others {
+  background-color: #c0392b;
+  color: white;
+  border: 1px solid #75251c;
+}
+
+@media only screen and (max-width: 774px) {
+  .Main .board {
+    width: 100vw;
+    height: 100vh;
+  }
+  .Main .board .inputbox {
+    height: 20vh;
+  }
+  .Main .board .inputbox div {
+    height: 20vh;
+  }
+  .Main .board .inputbox div .result {
+    line-height: 20vh;
+  }
+  .Main .board .inputbox div .error {
+    display: none;
+  }
+  .Main .board .button {
+    height: 80vh;
+  }
+}
+
+@media only screen and (max-width: 628px) {
+  .Main .board .button button {
+    font-size: 1.9rem;
+    padding: 4px;
+  }
+}
+
+@media only screen and (max-height: 533px) {
+  .Main .board .inputbox div .result {
+    font-size: 2rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */

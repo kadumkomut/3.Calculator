@@ -1,0 +1,206 @@
+body {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+*{
+    padding: 0;
+}
+
+.Main {
+    width: 100vw;
+    height: 100vh;
+    background-color: #a8322a;
+    display: grid;
+    place-items: center;
+
+    .particle {
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        z-index: 2;
+    }
+
+    .board {
+
+        width: 600px;
+        z-index: 3;
+        // box-shadow: -2px 1px 24px 0px rgba(70, 65, 65, 0.75);
+        // -webkit-box-shadow: -2px 1px 24px 0px rgba(70, 65, 65, 0.75);
+        // -moz-box-shadow: -2px 1px 24px 0px rgba(70, 65, 65, 0.75);
+
+
+        .inputbox {
+            overflow: hidden;
+            max-width: 800px;
+            div {
+                width: 100%;
+                background-color: black;
+                border: 0;
+                padding: 6px 4px;
+                height: 100px;
+                color:white;
+                font-size: 3rem;
+                position: relative;
+                position: relative;
+
+                .result {
+                    right: 0;
+                    position: absolute;
+                    line-height: 120px;
+                    padding-right: 17px;
+                }
+                .error {
+                    position: absolute;
+                    right: 20px;
+                    font-weight: bold;
+                    text-align: right;
+                    font-size: 1rem;
+                    background-color: black;
+                    color: rgb(243, 49, 49);
+                }
+                
+            }
+        }
+
+        
+
+        .button {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+
+            button {
+                padding:25px;
+                outline: none;
+                font-size: 2rem;
+                position: relative;
+                overflow: hidden;
+                cursor: pointer;
+
+                &:after {
+                    content: "";
+                    background: white;
+                    display: block;
+                    position: absolute;
+                    padding-top: 300%;
+                    padding-left: 350%;
+                    margin-left: -30px!important;
+                    margin-top: -120%;
+                    opacity: 0;
+                    transition: all 0.7s ease-in-out;
+                }
+
+                &:active:after {
+                    padding: 0;
+                    margin: 0;
+                    opacity: 1;
+                    transition: 0.4s
+                }
+            }
+
+            .clear {
+                background-color: #27ae60;
+                color:white;
+                border:0;
+                border-bottom:1px solid #18703d;
+                border-right: 1px solid #18703d;
+
+                &:hover {
+                    background-color: #1a703e;
+                }
+            }
+
+            .number {
+                background-color: #34495e;
+                color: white;
+                border: 0.4px solid #1b242e;
+
+                &:hover {
+                    background-color: #293747;
+                }
+            }
+
+            .operator {
+                background-color: #bdc3c7;
+                color: #2c3e50;
+                border: 1px solid #7f8c8d;
+                font-weight: bold;
+
+                &:hover {
+                    background-color: #93a2a3;
+                    color:white;
+                }
+            }
+
+            .extra {
+                background-color: #7f8c8d;
+                color: white;
+                border: 1px solid #5f6969;
+
+                &:hover {
+                    background-color: #677272;
+                }
+            }
+
+            .others {
+                background-color: #c0392b;
+                color:white;
+                border: 1px solid #75251c;
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 774px) {
+    .Main {
+        .board {
+            width: 100vw;
+            height: 100vh;
+            .inputbox {
+                height: 20vh;
+                div {
+                    height: 20vh;
+                    .result {
+                        line-height: 20vh;
+                    }
+                    .error {
+                        display: none;
+                    }
+                }
+            }
+            .button {
+                height: 80vh;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 628px) {
+    .Main {
+        .board {
+            .button {
+                button {
+                    font-size: 1.9rem;
+                    padding: 4px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-height: 533px) {
+    .Main {
+        .board {
+            .inputbox {
+                div {
+                    .result {
+                        // line-height: 90px;
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
